@@ -10,28 +10,28 @@ The description of the features can be found on [UCI Bank Marketing Dataset Webs
 
 The Jupyter notebook can be divided into 11 steps that deal with the initial dataset analysis, feature engineering and model building/results.
 
-# 1. First Impression of the dataset
+### 1. First Impression of the dataset
 
-# 2. Univariate analysis of the dataset
+### 2. Univariate analysis of the dataset
 
 - Value count analysis of the categorical features
 - Distribution analysis of the numerical features
 - Value count analysis of the target feature (Low amount of positive feature values leads to F1 score as central metric)
 
-# 3. Bivariate analysis of the dataset
+### 3. Bivariate analysis of the dataset
 
 - Pearson's correlation analysis of the numerical features regarding the target feature
 - Barplot analysis of the numerical features regarding the target feature (seaborn)
 - Barplot analysis of the categorical features regarding the taget feature (seaborn)
 - Correlation analysis of the categorical feature using chi-squared test and mutual information (scikit-learn)
 
-# 4. Detect abnormal and missing values
+### 4. Detect abnormal and missing values
 
 - Estimation of the amount of data cleaning via NaN value counts for all features - The decision rule is based on the low amount of datapoints (41.118 instances).
 - Boxplot analysis of the numerical features regarding outliers (seaborn)
 - Estimation of how many instances would be lost when using IQR with various multiplicators (1.0, 2.0, 2.5)
 
-# 5. Feature Engineering
+### 5. Feature Engineering
 
 Implementation of the findings of the preceding analysis steps:
 - Removal of the feature "Default"
@@ -39,16 +39,16 @@ Implementation of the findings of the preceding analysis steps:
 - Adding the new feature "contacted" stating if customers where previously contacted or not, extending the information of the feature "pdays"
 - Combining "emp.var.rate" and "nr.employed" into one feature "employment"
 
-# 6. Data preparation pipelines - tree based algorithms
+### 6. Data preparation pipelines - tree based algorithms
 
 Numerical features are not preprocessed due to the focus on tree based algorithms. As in recent month there are several analysis that show that OneHotEncoding damages the results of tree based algorithms, it is not used for nominal categorical features. Instead, they are ordinal encoded without predecessing order using OrdinalEncoder. Ordinal categorical features are preprocessed using OrdinalEncoder with the respective implementation of their order.
 
-# 7. Building and evaluating tree based algorithms
+### 7. Building and evaluating tree based algorithms
 
 - Training various tree based algorithms (RandomForest, AdaBoost, GradientBoosting, XGBoost) using crossvalidation
 - Evaluation of the models: XGBoost achieves the highest score with quite a low variance of results
 
-# 8. Hyperparameter tuning of XGBoost
+### 8. Hyperparameter tuning of XGBoost
 
 To tune XGBoost xgb.cv and sklearns XGBClassifier GridCV is used to find the best parameters. The following steps will be performed:
 
@@ -70,7 +70,7 @@ The last model xgb_6 has the best scores on the test set (optimized for F1 score
 
 As the last part of step 8 all features except five are dropped to train a new XGBoost model. Unfotunately the scores did not improve.
 
-# 9. Data preparation pipelines - Neural networks
+### 9. Data preparation pipelines - Neural networks
 
 - Ordinal categorical features (OrdinalEncoder)
 - Nominal categorical features (OneHotEncoder)
@@ -78,7 +78,7 @@ As the last part of step 8 all features except five are dropped to train a new X
 
 Due to the decision to drop all "unknown"/NaN values imputation is not included in the pipeline.
 
-# 10. Neural network with separated fully connected layers using the functional API of Keras
+### 10. Neural network with separated fully connected layers using the functional API of Keras
 
 The first model is built by using the functional API. It consist of two seperated input sides that on the one hand use the input features dealing with the calls and customer specifics (input A) and on the other hand with the economic environment features (input B). After the inputs every respective side consists of multiple fully connected layers which at a given point are concatenated to be followed by multiple fully connected layers until a final output that creates the binary classification. 
 
@@ -91,7 +91,7 @@ The ANN with the splitted architecture is not performing better than the tuned X
 
 It is important to note though, that hyperparameter tuning was not possible due to the limits in terms of the functional API of Keras.
 
-# 11. Neural network with only fully connected layers using sequential Keras API and KerasTuner
+### 11. Neural network with only fully connected layers using sequential Keras API and KerasTuner
 
 As a next step a simple fully connected neural network is created using the sequential API of Keras. For the tuning of the hyperparameters the still new KerasTuner implementation is used. The variation of parameters for the Tuner are as follows:
 
