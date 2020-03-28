@@ -122,10 +122,11 @@ The best model for the given binary classification task is the XGBoost algorithm
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dhedderich/Bank_Marketing_Classification/blob/master/LICENSE) file for details
 
 ## Acknowledgments
 Thanks for the inspiration to:
+
 [Aurélien Geron](https://github.com/ageron/handson-ml2),
 
 [Jason Brownlee](https://machinelearningmastery.com/)
