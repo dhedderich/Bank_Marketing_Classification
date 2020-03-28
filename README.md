@@ -1,6 +1,6 @@
 # UCI Bank Marketing Dataset - Classification 
 
-The project is based on the * [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing) and compares various tree based algorithms using scikit-learn and XGBoost with two different neural network architectures utilizing both the sequential and the functional API of Keras regarding the binary classification task. The neural network implemented via the sequential API of Keras is a fully connected neural network while the second neural network divides the inputs into two different category types. The newtork architecture is split into two separate fully connected layer architectures whereafter they are concatenated to feed multiple final fully connected layers. This architecture is implemented via the functional API of Keras.
+The project is based on the [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing) and compares various tree based algorithms using scikit-learn and XGBoost with two different neural network architectures utilizing both the sequential and the functional API of Keras regarding the binary classification task. The neural network implemented via the sequential API of Keras is a fully connected neural network while the second neural network divides the inputs into two different category types. The newtork architecture is split into two separate fully connected layer architectures whereafter they are concatenated to feed multiple final fully connected layers. This architecture is implemented via the functional API of Keras.
 
 ## Dataset
 
@@ -126,6 +126,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 Thanks for the inspiration to:
-[Aurélien Geron](https://github.com/ageron/handson-ml2)
+[Aurélien Geron](https://github.com/ageron/handson-ml2),
+
 [Jason Brownlee](https://machinelearningmastery.com/)
 
